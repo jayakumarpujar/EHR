@@ -1,0 +1,38 @@
+{
+  "engines": {
+    "composer": "^0.20.8"
+  },
+  "name": "ehr",
+  "version": "0.0.1",
+  "description": "An Ehr Sytem Built With HyperLedger",
+  "scripts": {
+    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/ehr.bna",
+    "pretest": "npm run lint",
+    "lint": "eslint .",
+    "test": "nyc mocha -t 0 test/*.js && cucumber-js"
+  },
+  "keywords": [
+    "composer",
+    "composer-network"
+  ],
+  "author": "Jay",
+  "email": "pujarjayakumar7799@gmail.com",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "latest",
+    "composer-admin": "^0.20.8",
+    "composer-cli": "^0.20.8",
+    "composer-client": "^0.20.8",
+    "composer-common": "^0.20.8",
+    "composer-connector-embedded": "^0.20.8",
+    "composer-cucumber-steps": "^0.20.8",
+    "coveralls": "^3.1.0",
+    "cucumber": "^2.2.0",
+    "eslint": "^7.0.0",
+    "lint": "^0.7.0",
+    "mkdirp": "^1.0.4",
+    "mocha": "latest",
+    "nyc": "^15.0.1"
+  }
+}
